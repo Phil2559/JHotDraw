@@ -34,7 +34,7 @@ import static org.jhotdraw.draw.AttributeKeys.*;
  * <br>1.0 July 17, 2007 Created.
  */
 public abstract class AbstractCompositeFigure
-        extends AbstractFigure
+        extends AbstractNoConnectFigure
         implements CompositeFigure {
 
     /**

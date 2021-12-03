@@ -54,6 +54,7 @@ public class PathTool extends BezierTool {
 
     @SuppressWarnings("unchecked")
     protected SVGPathFigure createPath() {
+        System.out.println("createPath");
         SVGPathFigure f = (SVGPathFigure) pathPrototype.clone();
         getEditor().applyDefaultAttributesTo(f);
         if (attributes != null) {
@@ -66,6 +67,7 @@ public class PathTool extends BezierTool {
 
     @Override
     protected void finishCreation(BezierFigure createdFigure, DrawingView creationView) {
+        System.out.println("finishCreation");
         if (DEBUG) {
             System.out.println("PathTool.finishCreation " + createdFigure);
         }

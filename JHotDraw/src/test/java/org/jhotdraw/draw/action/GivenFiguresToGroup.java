@@ -16,6 +16,7 @@ class GivenFiguresToGroup extends Stage<GivenFiguresToGroup> {
         editor = new DefaultDrawingEditor();
         DrawingView view = new DefaultDrawingView();
         view.setDrawing(new QuadTreeDrawing());
+        editor.add(view);
         editor.setActiveView(view);
     }
 

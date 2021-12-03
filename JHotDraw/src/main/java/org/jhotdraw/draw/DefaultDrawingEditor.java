@@ -75,6 +75,7 @@ public class DefaultDrawingEditor extends AbstractBean implements DrawingEditor,
     }
 
     public void setTool(Tool newValue) {
+        System.out.println("set tool: "+newValue.toString());
         Tool oldValue = tool;
         
         if (newValue == tool) {
@@ -110,6 +111,7 @@ public class DefaultDrawingEditor extends AbstractBean implements DrawingEditor,
     private Dimension preferredViewSize;
 
     public void toolStarted(ToolEvent evt) {
+        System.out.println("toolStarted: "+evt.toString());
         setActiveView(evt.getView());
     }
 
@@ -124,6 +126,7 @@ public class DefaultDrawingEditor extends AbstractBean implements DrawingEditor,
     }
 
     public void toolDone(ToolEvent evt) {
+        System.out.println("toolDone: "+evt.toString());
         // XXX - Maybe we should do this with all views of the editor??
         DrawingView v = getActiveView();
         if (v != null) {

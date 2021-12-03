@@ -89,6 +89,7 @@ public class BezierTool extends AbstractTool {
 
     @Override
     public void activate(DrawingEditor editor) {
+        System.out.println("activate");
         super.activate(editor);
         getView().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
     }
@@ -173,6 +174,9 @@ public class BezierTool extends AbstractTool {
     }
 
     protected void addPointToFigure(Point2D.Double newPoint) {
+        System.out.println("added point to figure");
+        System.out.println("X: "+newPoint.x);
+        System.out.println("Y: "+newPoint.y);
         int pointCount = createdFigure.getNodeCount();
 
         createdFigure.willChange();
