@@ -16,12 +16,16 @@ public class LineToolTest extends ScenarioTest<GivenLine,WhenLine,ThenLine> {
     
     @Test
     public void testDrawLine(){
-        given().newDrawingEditor();
-       
-        //Point2D.Double[] points = {new Point2D.Double(10,10), new Point2D.Double(20,20), new Point2D.Double(30,30)};
-        
-        when().selectPathTool().clickAndHoldMouse(10, 10).moveMouseTo(30, 30).releaseMouse(30, 30);
-        
-        then().lineIsOnDrawing().lineIsVisible().lineIsDrawnAsExpected();
+        given()
+                .newDrawingEditor();
+        when()
+                .selectPathTool()
+                .clickAndHoldMouse(10, 10)
+                .moveMouseTo(30, 30)
+                .releaseMouse(30, 30);
+        then()
+                .lineIsOnDrawing()
+                .lineIsVisible()
+                .lineIsDrawnAsExpected();
     }
 }

@@ -24,30 +24,22 @@ import static org.mockito.Mockito.when;
  * @author phili
  */
 public class WhenLine {
-    
     @ExpectedScenarioState
     @ProvidedScenarioState
     private DefaultDrawingEditor editor;
-
-    @ExpectedScenarioState
-    private PathTool pathTool;
     
     WhenLine selectPathTool(){
          editor.setTool(new CreationTool(new SVGPathFigure()));//, attributes);
         return this;
     }
-    
     WhenLine clickAndHoldMouse(int x, int y) {
         MouseEvent startingMousePosition = Mockito.mock(MouseEvent.class);
         when(startingMousePosition.getSource()).thenReturn(editor.getActiveView());
         when(startingMousePosition.getX()).thenReturn(x);
         when(startingMousePosition.getY()).thenReturn(y);
-        //System.out.println("bob: "+editor.getTool().toString());
-        
         ((CreationTool)editor.getTool()).mousePressed(startingMousePosition);
         return this;
     }
-
     WhenLine moveMouseTo(int x, int y) {
         MouseEvent newMousePosition = Mockito.mock(MouseEvent.class);
         when(newMousePosition.getSource()).thenReturn(editor.getActiveView());
@@ -56,7 +48,6 @@ public class WhenLine {
         editor.getTool().mouseDragged(newMousePosition);
         return this;
     }
-    
     WhenLine releaseMouse(int x, int y){
         MouseEvent finalPosition = Mockito.mock(MouseEvent.class);
         when(finalPosition.getSource()).thenReturn(editor.getActiveView());
@@ -64,10 +55,6 @@ public class WhenLine {
         when(finalPosition.getY()).thenReturn(y);
         editor.getTool().mouseReleased(finalPosition);
         return this;
-    }
-
-    Object and() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

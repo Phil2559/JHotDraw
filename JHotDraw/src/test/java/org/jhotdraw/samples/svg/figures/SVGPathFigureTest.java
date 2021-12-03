@@ -79,9 +79,7 @@ public class SVGPathFigureTest {
         SVGPathFigure figure = new SVGPathFigure();
         Rectangle2D.Double expectedRectangle = new Rectangle.Double(5,5,0,0);
         assertEquals(figure.limitAreaByGraphicClipbounds(g, drawingArea), expectedRectangle);
-        
     }
-    
     @Test
     public void testLimitAreaByGraphicClipboundsGivenNoClipbounds(){
         Graphics2D g = mock(Graphics2D.class);
@@ -91,8 +89,6 @@ public class SVGPathFigureTest {
         Rectangle2D.Double expectedRectangle = new Rectangle.Double(5,5,5,5);
         assertEquals(figure.limitAreaByGraphicClipbounds(g, drawingArea), expectedRectangle);
     }
-    
-    
     @Test
     public void testLimitAreaByGraphicClipboundsGivenNoOverlap(){
         Graphics2D g = mock(Graphics2D.class);
